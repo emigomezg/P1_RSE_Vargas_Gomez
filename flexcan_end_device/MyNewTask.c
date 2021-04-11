@@ -68,23 +68,20 @@ void My_Task(osaTaskParam_t argument){
 			TurnOffLeds(); /* Ensure all LEDs are turned off */
 			break;
 		case gMyNewTaskEvent2_c: /* Event called from myTaskTimerCallback */
+			TurnOffLeds();
 			g_counter = g_counter%4;
 				switch(g_counter){
 				case 0:
-					LED_TurnOffAllLeds();
 					Led2On();
 					break;
 				case 1:
-					LED_TurnOffAllLeds();
 					Led3On();
 					break;
 				case 2:
-					LED_TurnOffAllLeds();
 					Led4On();
 					break;
 				case 3:
-					LED_TurnOffAllLeds();
-					LED_TurnOnAllLeds();
+					TurnOnLeds();
 					break;
 				default:
 					break;
