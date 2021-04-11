@@ -16,6 +16,9 @@
 #include "fsl_common.h"
 #include "EmbeddedTypes.h"
 #include "fsl_os_abstraction.h"
+#include "MacInterface.h"
+#include "Messaging.h"
+
 /* Define the available Task's Events */
 #define gMyNewTaskEvent1_c (1 << 0)
 #define gMyNewTaskEvent2_c (1 << 1)
@@ -27,7 +30,7 @@
 
 void My_Task(osaTaskParam_t argument);
 void MyTaskTimer_Start(void);
-void MyTaskTimer_Stop(void);
+void MyTask_Button(void);
 void MyTask_Init(void);
 
 #endif /* MYNEWTASK_H_ */

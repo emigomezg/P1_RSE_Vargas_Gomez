@@ -260,7 +260,7 @@ void App_Idle_Task(uint32_t argument)
         /* Process NV Storage save-on-idle and save-on-count requests. */
         NvIdle();
 #endif
-
+/*
 #if mEnterLowPowerWhenIdle_c
         if( PWR_CheckIfDeviceCanGoToSleep() )
         {
@@ -282,6 +282,7 @@ void App_Idle_Task(uint32_t argument)
             PWR_EnterSleep();
         }
 #endif
+*/
         if( !gUseRtos_c )
         {
             break;
