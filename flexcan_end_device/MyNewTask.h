@@ -23,13 +23,16 @@
 #define gMyNewTaskEvent1_c (1 << 0)
 #define gMyNewTaskEvent2_c (1 << 1)
 #define gMyNewTaskEvent3_c (1 << 2)
+#define gMyNewTaskEvent4_c (1 << 3)
 #define TIMEOUT 3*1000
 
 #define gMyTaskPriority_c 3
 #define gMyTaskStackSize_c 400
 
 void My_Task(osaTaskParam_t argument);
+void set_button(uint8_t value);
 void MyTaskTimer_Start(void);
+void MyTaskTimer_Stop(void);
 void MyTask_Button(void);
 void MyTask_Init(void);
 

@@ -231,7 +231,7 @@ void main_task(uint32_t param)
     }
 
     /* Call application Idle task */
-    App_Idle_Task( param );
+    //App_Idle_Task( param );
 }
 
 /*! *********************************************************************************
@@ -260,7 +260,7 @@ void App_Idle_Task(uint32_t argument)
         /* Process NV Storage save-on-idle and save-on-count requests. */
         NvIdle();
 #endif
-/*
+
 #if mEnterLowPowerWhenIdle_c
         if( PWR_CheckIfDeviceCanGoToSleep() )
         {
@@ -282,7 +282,7 @@ void App_Idle_Task(uint32_t argument)
             PWR_EnterSleep();
         }
 #endif
-*/
+
         if( !gUseRtos_c )
         {
             break;
@@ -1200,6 +1200,21 @@ static void App_HandleKeys
         {
             LED_StopFlashingAllLeds();
             OSA_EventSet(mAppEvent, gAppEvtDummyEvent_c);
+        }
+        else
+        {
+        	if(gKBD_EventSW1_c == events)
+        	{
+        		set_button(1);
+        		MyTask_Button();
+        		MyTaskTimer_Start();
+        	}
+        	else if(gKBD_EventSW2_c == events)
+        	{
+        		set_button(2);
+        		MyTask_Button();
+        		MyTaskTimer_Start();
+        	}
         }
     }
 #endif
